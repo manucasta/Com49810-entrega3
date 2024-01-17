@@ -35,6 +35,9 @@ function createCard (){
     
     containerCard.appendChild(div);  
   })
+
+  initializeCart();
+  updateCart();
 }
 
 function addCart(idProducto){
@@ -98,6 +101,13 @@ function getTotal(){
   containerTotal.innerHTML=`
                             <p>TOTAL: $${total}</p>
                             `;
+}
+
+function initializeCart() {
+  const storagedCart = localStorage.getItem("cart");
+  if (storagedCart) {
+    cartProducts = JSON.parse(storagedCart);
+  }
 }
 
 createCard ();
