@@ -1,0 +1,73 @@
+
+*{
+  font-family: 'Jockey One', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: rgba(220, 30, 42, 1);
+  color: #F1ECEA;
+}
+
+.mainTitle{
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 1.875rem;
+}
+
+#containerCard{
+  display: flex;
+  justify-content: space-between;
+  margin: 2.5rem;
+}
+
+.card{
+  width: 12.5rem;
+  height: fit-content;
+  background-color: rgba(179, 19, 18, 1);
+  box-shadow: 5px 7px 10px rgb(131, 2, 2);
+  border:.0625rem brown;
+}
+
+.card-img{
+  width: 100%;
+  object-fit: cover;
+  height: 15.625rem;
+  margin-bottom: .9375rem;
+}
+
+.card-flex{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: .9375rem;
+}
+
+.card-flex button{
+  padding: 7px 10px 7px 10px;
+  background-color: rgb(139, 5, 5);
+  color: #F1ECEA;
+  border: none;
+  border-radius: .625rem;
+  margin-top: .625rem;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+}
+
+.card-flex button:hover{
+  transform: scale(1.1);
+}
+
+#containerCart{
+  display: flex;
+  margin: 1.25rem;
+  gap: .9375rem;
+}
+
+.carrito-title{
+  margin-top: 30px;
+  margin-bottom: 1.875rem;
+  margin-left: 1.25rem;
+}
