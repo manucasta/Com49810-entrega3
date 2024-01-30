@@ -94,7 +94,6 @@ function updateCart(){
   containerCart.appendChild(div);
   })       
 
-  removeCart();
   getTotal();
 }
 
