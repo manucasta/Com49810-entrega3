@@ -44,6 +44,8 @@ function addCart(idProducto){
   
   const selectedProductIndex = cartProducts.findIndex(product => product.id === idProducto);
 
+  console.log (selectedProductIndex)
+
   if (selectedProductIndex >= 0) {
     cartProducts[selectedProductIndex].quantity = (cartProducts[selectedProductIndex].quantity || 1) + 1;
   } else {
@@ -62,12 +64,11 @@ function addCart(idProducto){
     },
   }).showToast();
     
-
+  
   updateCart();
 }
   
 function updateCart(){
-  
   const cartProductsJSON = JSON.stringify(cartProducts);
       
   localStorage.setItem ("cart", cartProductsJSON);
@@ -86,12 +87,14 @@ function updateCart(){
                         <div class="card-flex">
                           <h3>${product.name}</h3>
                           <p>$${product.price} x ${product.quantity}</p>
-                          
+                          <button onclick="removeCart(${product.id})">Eliminar</button>
                         </div>
                         `;
     
   containerCart.appendChild(div);
   })       
+
+  removeCart();
   getTotal();
 }
 
@@ -108,6 +111,29 @@ function initializeCart() {
   if (storagedCart) {
     cartProducts = JSON.parse(storagedCart);
   }
+}
+
+function removeCart(idProducto){
+  const selectedProductIndex = cartProducts.findIndex(product => product.id === idProducto);
+
+  if (selectedProductIndex >= 0) {
+    cartProducts[selectedProductIndex].quantity -= 1;
+  
+  if (cartProducts[selectedProductIndex].quantity === 0){
+    cartProducts.splice(selectedProductIndex, 1);
+  }
+}
+  Toastify({
+    text: "The product was removed from the cart",
+    duration: 3000,
+    gravity: "top",
+    position: "right", 
+    style: {
+      background: "linear-gradient(to right, #FF0000, #FF7878)",
+    },
+  }).showToast();
+  
+  updateCart();
 }
 
 createCard ();
