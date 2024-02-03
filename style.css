@@ -71,3 +71,59 @@ body{
   margin-bottom: 1.875rem;
   margin-left: 1.25rem;
 }
+
+#futbol{
+  display: flex;
+  justify-content: space-around;
+}
+
+.fixture-scroll{
+  max-height: 12.5rem;
+  overflow-y: auto;
+}
+
+.fecha-box {
+  padding: .3125rem;
+  margin-top: .9375rem;
+  margin-bottom: 1.25rem;
+  border: solid .0625rem #F1ECEA ;
+}
+
+.teams-box{
+  margin-top: .625rem;
+}
+
+.match-details {
+  font-size: 0.75rem;
+}
+
+.scrollable-table{
+  max-height: 12.5rem;
+  overflow-y: auto;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 2.5rem
+}
+
+.table-positions {
+  border-collapse: collapse;
+  height: 12.5rem;
+  color: black;
+}
+
+td, th {
+  vertical-align: top;
+  text-align: center;
+  padding: 0.1875rem;
+  border-bottom: 0.0625rem solid rgb(128, 127, 127);
+  background-color: rgb(221, 220, 220);
+  font-weight: bold;
+}
+
+.team-name :hover {
+  background-color: rgb(179, 179, 179);
+}
+
+.team-logo {
+  width: 1.25rem;
+}
